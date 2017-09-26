@@ -1,0 +1,23 @@
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <strong>入力内容にエラーがあります</strong>
+      <ul>
+        <% @user.errors.each do |error| %>
+          <li><%= error.messages %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <table class="table">
+    <tr>
+      <th>First Name(名前)</th>
+      <td><%= f.text_field :first_name %></td>
+    </tr>
+    <tr>
+      <th>ステータス</th>
+      <td><%= f.select :status, STAFF_STATUS_LIST.keys, { include_blank: '選択してください'} %></td>
+    </tr>
+  </table>
+  <div><%= f.submit "Create"%></div>
+<% end %>

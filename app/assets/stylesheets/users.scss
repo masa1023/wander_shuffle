@@ -1,0 +1,46 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.member-list-wrapper {
+  .table {
+    border: solid 1px black;
+    tr:first-child {
+      background-color: lightgray;
+    }
+    tr:last-child {
+      td {
+        border-bottom: none;
+      }
+    }
+    tr {
+      td {
+        border-bottom: solid 1px black;
+        border-right: solid 1px black;
+        padding: 5px;
+      }
+      td:first-child {
+      }
+      td:last-child {
+        border-right: none;
+      }
+    }
+    .check-box {
+      text-align: center;
+    }
+  }
+}
+
+.input-group-num {
+  margin: 10px 0px;
+}
+
+.start-shuffle {
+  margin: 10px 0px;
+}
+
+.register-new-member {
+  a {
+    color: blue;
+  }
+}

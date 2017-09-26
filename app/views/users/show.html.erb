@@ -1,0 +1,14 @@
+<div class="member-list-wrapper">
+  <table class="table">
+    <tr>
+      <th>First Name(名前)</th>
+      <th>Last Name(名字)</th>
+      <th>Status</th>
+    </tr>
+    <tr>
+      <td><%= @user.first_name %></td>
+      <td><%= @user.last_name %></td>
+      <td><%= STAFF_STATUS_LIST.key(@user.status) %></td>
+    </tr>
+  </table>
+</div>

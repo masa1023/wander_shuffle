@@ -1,0 +1,19 @@
+<div class="member-list-wrapper">
+  <h1>Let's go to Lunch!</h1>
+  <table class="table">
+    <tr>
+      <th>First Name(名前)</th>
+      <th>Team</th>
+      <th>Status</th>
+    </tr>
+    <% @shuffled_members_with_group.each do |member|%>
+      <tr>
+        <td><%= member[:first_name] %></td>
+        <td><%= member[:group_num] %></td>
+        <td><%= member[:status] %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<h2><%= link_to "Share attendees on Slack", @link_for_slack %></h2>

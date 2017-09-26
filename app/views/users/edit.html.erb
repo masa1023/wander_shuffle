@@ -1,0 +1,29 @@
+<%= form_for @user do |f| %>
+  <table class="table">
+    <tr>
+      <th>First Name(名前)</th>
+      <td><%= f.text_field :first_name, place_holder: @user.first_name %></td>
+    </tr>
+    <tr>
+      <th>Status</th>
+      <td>
+        <%=
+          f.select :status,
+          STAFF_STATUS_LIST.keys,
+          selected: STAFF_STATUS_LIST.key(@user.status).to_s
+        %>
+      </td>
+    </tr>
+    <tr>
+      <th>is_active</th>
+      <td>
+        <%=
+          f.select :is_active,
+          [true, false],
+          selected: @user.is_active
+        %>
+      </td>
+    </tr>
+  </table>
+  <div><%= f.submit "Update"%></div>
+<% end %>

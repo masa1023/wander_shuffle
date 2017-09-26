@@ -1,0 +1,26 @@
+<%= form_tag users_shuffle_path, method: :post do |f| %>
+  <div class="member-list-wrapper">
+    <h1>Members List</h1>
+    <table class="table">
+      <tr>
+        <th>First Name(名前)</th>
+        <th>Last Name(名字)</th>
+        <th>Status</th>
+        <th>Join WanderLunch?</th>
+      </tr>
+      <% @users.each do |user|%>
+        <tr>
+          <td><%= link_to user.first_name, edit_user_path(user) %></td>
+          <td><%= user.last_name %></td>
+          <td><%= STAFF_STATUS_LIST.key(user.status) %></td>
+          <td class="check-box"><%= check_box :user_id, user.id %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="input-group-num"><span>Please input group number</span><%= number_field_tag :group_num %></div>
+  <div class="start-shuffle"><%= submit_tag "Start Shuffling!" %></div>
+<% end %>
+<h3 class="register-new-member">
+  <%= link_to "Register New Member", new_user_path %>
+</h3>
